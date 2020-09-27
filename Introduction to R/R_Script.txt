@@ -1,0 +1,1000 @@
+
+R version 3.6.0 (2019-04-26) -- "Planting of a Tree"
+Copyright (C) 2019 The R Foundation for Statistical Computing
+Platform: x86_64-w64-mingw32/x64 (64-bit)
+
+R is free software and comes with ABSOLUTELY NO WARRANTY.
+You are welcome to redistribute it under certain conditions.
+Type 'license()' or 'licence()' for distribution details.
+
+R is a collaborative project with many contributors.
+Type 'contributors()' for more information and
+'citation()' on how to cite R or R packages in publications.
+
+Type 'demo()' for some demos, 'help()' for on-line help, or
+'help.start()' for an HTML browser interface to help.
+Type 'q()' to quit R.
+
+> setwd("C:/Users/st98/Desktop/Introduction to R")
+> getwd()
+[1] "C:/Users/st98/Desktop/Introduction to R"
+> #this is a comment, yo!
+> cats <- 5
+> dogs <-3
+> cats + dogs
+[1] 8
+> cats > dogs
+[1] TRUE
+> cats < dogs
+[1] FALSE
+> # alt+- is a shortcut for assigning vars
+> temp <- 101
+> temp
+[1] 101
+> typeof(temp)
+[1] "double"
+> #numbers are decimal by default
+> animals <- as.integer(cats+dogs)
+> 
+> animals
+[1] 8
+> typeof(animals)
+[1] "integer"
+> 
+> greeting <- "Hello"
+> fname <- Biff
+Error: object 'Biff' not found
+> paste(greeting,fname)
+Error in paste(greeting, fname) : object 'fname' not found
+> fname <- "Biff"
+> paste(greeting,fname)
+[1] "Hello Biff"
+> regions <- c("North", "South", "East", "West")
+> regions
+[1] "North" "South" "East"  "West" 
+> regions[3]
+[1] "East"
+> regions[2+2]
+[1] "West"
+> xr <- c(1,4)
+> regions[xr]
+[1] "North" "West" 
+> regions[2:4]
+[1] "South" "East"  "West" 
+> fruit <- c("apple", "plum", "tomato", "peach", "pear", "necatrine")
+> fruit
+[1] "apple"     "plum"      "tomato"    "peach"     "pear"      "necatrine"
+> item <- "cucumber"
+> item %in% fruit
+[1] FALSE
+> item2 <- "plum"
+> item2 %in% fruit
+[1] TRUE
+> fridge <- c("peach", "lettuce", "plum")
+> fridge %in% fruit
+[1]  TRUE FALSE  TRUE
+> fnames <- c("Biff", "Amanda", "Scott")
+> lanmes <- c("Arfuss", "Kuelker", "Plodder")
+> paste(fnames, lanmes)
+[1] "Biff Arfuss"    "Amanda Kuelker" "Scott Plodder" 
+> sales <- c(5000,4000,7000,4500)
+> sum(sales)
+[1] 20500
+> max(sales)
+[1] 7000
+> min(sales)
+[1] 4000
+> rank(sales)
+[1] 3 1 4 2
+> mean(sales_)
+Error in mean(sales_) : object 'sales_' not found
+> mean(sales)
+[1] 5125
+> mode(sales)
+[1] "numeric"
+> sd(sales)
+[1] 1314.978
+> var(sales)
+[1] 1729167
+> commission <- sales*.05
+> commission
+[1] 250 200 350 225
+> a <- c(1,2,3)
+> b <- c(4,5,6)
+> x <- a+b
+> 
+> x
+[1] 5 7 9
+> i <- 1:10
+> i
+ [1]  1  2  3  4  5  6  7  8  9 10
+> k <- seq(5,15,2)
+> k
+[1]  5  7  9 11 13 15
+> d <- seq(56,80,2)
+> d
+ [1] 56 58 60 62 64 66 68 70 72 74 76 78 80
+> m <- month.name
+> m
+ [1] "January"   "February"  "March"     "April"     "May"       "June"     
+ [7] "July"      "August"    "September" "October"   "November"  "December" 
+> alphabet <- letters
+> alphabet
+ [1] "a" "b" "c" "d" "e" "f" "g" "h" "i" "j" "k" "l" "m" "n" "o" "p" "q" "r" "s" "t"
+[21] "u" "v" "w" "x" "y" "z"
+> ALPHABET <- LETTERS
+> ALPHABET
+ [1] "A" "B" "C" "D" "E" "F" "G" "H" "I" "J" "K" "L" "M" "N" "O" "P" "Q" "R" "S" "T"
+[21] "U" "V" "W" "X" "Y" "Z"
+> paste(ALPHABET,alphabet)
+ [1] "A a" "B b" "C c" "D d" "E e" "F f" "G g" "H h" "I i" "J j" "K k" "L l" "M m"
+[14] "N n" "O o" "P p" "Q q" "R r" "S s" "T t" "U u" "V v" "W w" "X x" "Y y" "Z z"
+> bicycles <- c("Pacemaker", "La Petite", "La Razor")
+> quan <- c(7,11,9)
+> wholepr <- c(129.95, 349, 299.99)
+> sum(quan)
+[1] 27
+> max(wholepr)
+[1] 349
+> min(wholepr)
+[1] 129.95
+> newprice <- wholepr*1.15
+> newprice
+[1] 149.4425 401.3500 344.9885
+> quan*wholepr
+[1]  909.65 3839.00 2699.91
+> sum(quan*wholepr)
+[1] 7448.56
+> "Le Petite" %in% bicycles
+[1] FALSE
+> bicycles[3]
+[1] "La Razor"
+> bicycles[2:3]
+[1] "La Petite" "La Razor" 
+> extra <- month.abb[seq(1,12,2)]
+> extra
+[1] "Jan" "Mar" "May" "Jul" "Sep" "Nov"
+> A <- c(10,11,12,13,14,15)
+> B <- c(1,2)
+> c <- A+B
+> C
+function (object, contr, how.many, ...) 
+{
+    if (!nlevels(object)) 
+        stop("object not interpretable as a factor")
+    if (!missing(contr) && is.name(Xcontr <- substitute(contr))) 
+        contr <- switch(as.character(Xcontr), poly = "contr.poly", 
+            helmert = "contr.helmert", sum = "contr.sum", 
+            treatment = "contr.treatment", SAS = "contr.SAS", 
+            contr)
+    if (missing(contr)) {
+        oc <- getOption("contrasts")
+        contr <- if (length(oc) < 2L) 
+            if (is.ordered(object)) 
+                contr.poly
+            else contr.treatment
+        else oc[1 + is.ordered(object)]
+    }
+    if (missing(how.many) && missing(...)) 
+        contrasts(object) <- contr
+    else {
+        if (is.character(contr)) 
+            contr <- get(contr, mode = "function")
+        if (is.function(contr)) 
+            contr <- contr(nlevels(object), ...)
+        contrasts(object, how.many) <- contr
+    }
+    object
+}
+<bytecode: 0x00000000107a6528>
+<environment: namespace:stats>
+> c
+[1] 11 13 13 15 15 17
+> first <- c("Emilia", "Bradleigh", "Audrey")
+> last <- c("Ragnarson", "Kuelker")
+> combo <- paste(first,last)
+> combo
+[1] "Emilia Ragnarson"  "Bradleigh Kuelker" "Audrey Ragnarson" 
+> warriors <- c("Audrey", "Bradleigh", "Emilia")
+> kills <-  c(163, 498, 2)
+> df <- data.frame(warriors, kills)
+> df
+   warriors kills
+1    Audrey   163
+2 Bradleigh   498
+3    Emilia     2
+> head(df)
+   warriors kills
+1    Audrey   163
+2 Bradleigh   498
+3    Emilia     2
+> head(df,2)
+   warriors kills
+1    Audrey   163
+2 Bradleigh   498
+> tail(df,1)
+  warriors kills
+3   Emilia     2
+> df[2,2]
+[1] 498
+> summary(df)
+      warriors     kills      
+ Audrey   :1   Min.   :  2.0  
+ Bradleigh:1   1st Qu.: 82.5  
+ Emilia   :1   Median :163.0  
+               Mean   :221.0  
+               3rd Qu.:330.5  
+               Max.   :498.0  
+> str(df)
+'data.frame':	3 obs. of  2 variables:
+ $ warriors: Factor w/ 3 levels "Audrey","Bradleigh",..: 1 2 3
+ $ kills   : num  163 498 2
+> str(warriors)
+ chr [1:3] "Audrey" "Bradleigh" "Emilia"
+> str(kills)
+ num [1:3] 163 498 2
+> mtcars
+                     mpg cyl  disp  hp drat    wt  qsec vs am gear carb
+Mazda RX4           21.0   6 160.0 110 3.90 2.620 16.46  0  1    4    4
+Mazda RX4 Wag       21.0   6 160.0 110 3.90 2.875 17.02  0  1    4    4
+Datsun 710          22.8   4 108.0  93 3.85 2.320 18.61  1  1    4    1
+Hornet 4 Drive      21.4   6 258.0 110 3.08 3.215 19.44  1  0    3    1
+Hornet Sportabout   18.7   8 360.0 175 3.15 3.440 17.02  0  0    3    2
+Valiant             18.1   6 225.0 105 2.76 3.460 20.22  1  0    3    1
+Duster 360          14.3   8 360.0 245 3.21 3.570 15.84  0  0    3    4
+Merc 240D           24.4   4 146.7  62 3.69 3.190 20.00  1  0    4    2
+Merc 230            22.8   4 140.8  95 3.92 3.150 22.90  1  0    4    2
+Merc 280            19.2   6 167.6 123 3.92 3.440 18.30  1  0    4    4
+Merc 280C           17.8   6 167.6 123 3.92 3.440 18.90  1  0    4    4
+Merc 450SE          16.4   8 275.8 180 3.07 4.070 17.40  0  0    3    3
+Merc 450SL          17.3   8 275.8 180 3.07 3.730 17.60  0  0    3    3
+Merc 450SLC         15.2   8 275.8 180 3.07 3.780 18.00  0  0    3    3
+Cadillac Fleetwood  10.4   8 472.0 205 2.93 5.250 17.98  0  0    3    4
+Lincoln Continental 10.4   8 460.0 215 3.00 5.424 17.82  0  0    3    4
+Chrysler Imperial   14.7   8 440.0 230 3.23 5.345 17.42  0  0    3    4
+Fiat 128            32.4   4  78.7  66 4.08 2.200 19.47  1  1    4    1
+Honda Civic         30.4   4  75.7  52 4.93 1.615 18.52  1  1    4    2
+Toyota Corolla      33.9   4  71.1  65 4.22 1.835 19.90  1  1    4    1
+Toyota Corona       21.5   4 120.1  97 3.70 2.465 20.01  1  0    3    1
+Dodge Challenger    15.5   8 318.0 150 2.76 3.520 16.87  0  0    3    2
+AMC Javelin         15.2   8 304.0 150 3.15 3.435 17.30  0  0    3    2
+Camaro Z28          13.3   8 350.0 245 3.73 3.840 15.41  0  0    3    4
+Pontiac Firebird    19.2   8 400.0 175 3.08 3.845 17.05  0  0    3    2
+Fiat X1-9           27.3   4  79.0  66 4.08 1.935 18.90  1  1    4    1
+Porsche 914-2       26.0   4 120.3  91 4.43 2.140 16.70  0  1    5    2
+Lotus Europa        30.4   4  95.1 113 3.77 1.513 16.90  1  1    5    2
+Ford Pantera L      15.8   8 351.0 264 4.22 3.170 14.50  0  1    5    4
+Ferrari Dino        19.7   6 145.0 175 3.62 2.770 15.50  0  1    5    6
+Maserati Bora       15.0   8 301.0 335 3.54 3.570 14.60  0  1    5    8
+Volvo 142E          21.4   4 121.0 109 4.11 2.780 18.60  1  1    4    2
+> head(mtcars,3)
+               mpg cyl disp  hp drat    wt  qsec vs am gear carb
+Mazda RX4     21.0   6  160 110 3.90 2.620 16.46  0  1    4    4
+Mazda RX4 Wag 21.0   6  160 110 3.90 2.875 17.02  0  1    4    4
+Datsun 710    22.8   4  108  93 3.85 2.320 18.61  1  1    4    1
+> tail(mtcars)
+                mpg cyl  disp  hp drat    wt qsec vs am gear carb
+Porsche 914-2  26.0   4 120.3  91 4.43 2.140 16.7  0  1    5    2
+Lotus Europa   30.4   4  95.1 113 3.77 1.513 16.9  1  1    5    2
+Ford Pantera L 15.8   8 351.0 264 4.22 3.170 14.5  0  1    5    4
+Ferrari Dino   19.7   6 145.0 175 3.62 2.770 15.5  0  1    5    6
+Maserati Bora  15.0   8 301.0 335 3.54 3.570 14.6  0  1    5    8
+Volvo 142E     21.4   4 121.0 109 4.11 2.780 18.6  1  1    4    2
+> mtcars[8,]
+           mpg cyl  disp hp drat   wt qsec vs am gear carb
+Merc 240D 24.4   4 146.7 62 3.69 3.19   20  1  0    4    2
+> 
+> mtcars[,5]
+ [1] 3.90 3.90 3.85 3.08 3.15 2.76 3.21 3.69 3.92 3.92 3.92 3.07 3.07 3.07 2.93 3.00
+[17] 3.23 4.08 4.93 4.22 3.70 2.76 3.15 3.73 3.08 4.08 4.43 3.77 4.22 3.62 3.54 4.11
+> colnames(df)
+[1] "warriors" "kills"   
+> nrow(mtcars)
+[1] 32
+> ncol(mtcars)
+[1] 11
+> 
+> 
+> #Ex 2
+> year <- c(2014,2015,2016)
+> nonmedi <- c(4.8,4.6,5.2)
+> medi <- c(8.5,8.1,9.6)
+> hospital <- data.frame(year,nonmedi, medi)
+> hospital
+  year nonmedi medi
+1 2014     4.8  8.5
+2 2015     4.6  8.1
+3 2016     5.2  9.6
+> nrow(hospital)
+[1] 3
+> hospital(2,)
+Error in hospital(2, ) : could not find function "hospital"
+> hospital[2,]
+  year nonmedi medi
+2 2015     4.6  8.1
+> 
+> str(hospital)
+'data.frame':	3 obs. of  3 variables:
+ $ year   : num  2014 2015 2016
+ $ nonmedi: num  4.8 4.6 5.2
+ $ medi   : num  8.5 8.1 9.6
+> hospital[,1]
+[1] 2014 2015 2016
+> summary(hospital)
+      year         nonmedi           medi      
+ Min.   :2014   Min.   :4.600   Min.   :8.100  
+ 1st Qu.:2014   1st Qu.:4.700   1st Qu.:8.300  
+ Median :2015   Median :4.800   Median :8.500  
+ Mean   :2015   Mean   :4.867   Mean   :8.733  
+ 3rd Qu.:2016   3rd Qu.:5.000   3rd Qu.:9.050  
+ Max.   :2016   Max.   :5.200   Max.   :9.600  
+> colnames(hospital)
+[1] "year"    "nonmedi" "medi"   
+> t <- seq(1,3,2)
+> hospital[t]
+  year medi
+1 2014  8.5
+2 2015  8.1
+3 2016  9.6
+> nottem
+      Jan  Feb  Mar  Apr  May  Jun  Jul  Aug  Sep  Oct  Nov  Dec
+1920 40.6 40.8 44.4 46.7 54.1 58.5 57.7 56.4 54.3 50.5 42.9 39.8
+1921 44.2 39.8 45.1 47.0 54.1 58.7 66.3 59.9 57.0 54.2 39.7 42.8
+1922 37.5 38.7 39.5 42.1 55.7 57.8 56.8 54.3 54.3 47.1 41.8 41.7
+1923 41.8 40.1 42.9 45.8 49.2 52.7 64.2 59.6 54.4 49.2 36.3 37.6
+1924 39.3 37.5 38.3 45.5 53.2 57.7 60.8 58.2 56.4 49.8 44.4 43.6
+1925 40.0 40.5 40.8 45.1 53.8 59.4 63.5 61.0 53.0 50.0 38.1 36.3
+1926 39.2 43.4 43.4 48.9 50.6 56.8 62.5 62.0 57.5 46.7 41.6 39.8
+1927 39.4 38.5 45.3 47.1 51.7 55.0 60.4 60.5 54.7 50.3 42.3 35.2
+1928 40.8 41.1 42.8 47.3 50.9 56.4 62.2 60.5 55.4 50.2 43.0 37.3
+1929 34.8 31.3 41.0 43.9 53.1 56.9 62.5 60.3 59.8 49.2 42.9 41.9
+1930 41.6 37.1 41.2 46.9 51.2 60.4 60.1 61.6 57.0 50.9 43.0 38.8
+1931 37.1 38.4 38.4 46.5 53.5 58.4 60.6 58.2 53.8 46.6 45.5 40.6
+1932 42.4 38.4 40.3 44.6 50.9 57.0 62.1 63.5 56.3 47.3 43.6 41.8
+1933 36.2 39.3 44.5 48.7 54.2 60.8 65.5 64.9 60.1 50.2 42.1 35.8
+1934 39.4 38.2 40.4 46.9 53.4 59.6 66.5 60.4 59.2 51.2 42.8 45.8
+1935 40.0 42.6 43.5 47.1 50.0 60.5 64.6 64.0 56.8 48.6 44.2 36.4
+1936 37.3 35.0 44.0 43.9 52.7 58.6 60.0 61.1 58.1 49.6 41.6 41.3
+1937 40.8 41.0 38.4 47.4 54.1 58.6 61.4 61.8 56.3 50.9 41.4 37.1
+1938 42.1 41.2 47.3 46.6 52.4 59.0 59.6 60.4 57.0 50.7 47.8 39.2
+1939 39.4 40.9 42.4 47.8 52.4 58.0 60.7 61.8 58.2 46.7 46.6 37.8
+> hospital[seq(1,3,2)]
+  year medi
+1 2014  8.5
+2 2015  8.1
+3 2016  9.6
+> hospital[seq(1,3,2),]
+  year nonmedi medi
+1 2014     4.8  8.5
+3 2016     5.2  9.6
+> snowdf <- read.csv(file-"SnowconeSakes.csv", stringsAsFactors = FALSE)
+Error in file - "SnowconeSakes.csv" : 
+  non-numeric argument to binary operator
+> snowdf <- read.csv(file-"SnowconeSales.csv", stringsAsFactors = FALSE)
+Error in file - "SnowconeSales.csv" : 
+  non-numeric argument to binary operator
+> snowdf <- read.csv(file="SnowconeSakes.csv", stringsAsFactors = FALSE)
+Error in file(file, "rt") : cannot open the connection
+In addition: Warning message:
+In file(file, "rt") :
+  cannot open file 'SnowconeSakes.csv': No such file or directory
+> snowdf <- read.csv(file="SnowconeSales.csv", stringsAsFactors = FALSE)
+> head(snowdf)
+   Date Sales Temp Rain
+1 1-Jul  1231   68    2
+2 2-Jul  4761   93    0
+3 3-Jul  5416   95    0
+4 4-Jul  4321   95    0
+5 5-Jul  2011   78    1
+6 6-Jul  4817   94    0
+> rownames(snowdf)
+ [1] "1"  "2"  "3"  "4"  "5"  "6"  "7"  "8"  "9"  "10" "11" "12" "13" "14" "15" "16"
+[17] "17" "18" "19" "20" "21" "22" "23" "24" "25" "26" "27" "28" "29" "30" "31"
+> colnames(snowdf)
+[1] "Date"  "Sales" "Temp"  "Rain" 
+> summary(snowdf)
+     Date               Sales           Temp             Rain       
+ Length:31          Min.   :1231   Min.   : 68.00   Min.   :0.0000  
+ Class :character   1st Qu.:4100   1st Qu.: 88.50   1st Qu.:0.0000  
+ Mode  :character   Median :4416   Median : 92.00   Median :0.0000  
+                    Mean   :4253   Mean   : 90.77   Mean   :0.2581  
+                    3rd Qu.:4716   3rd Qu.: 95.00   3rd Qu.:0.0000  
+                    Max.   :5416   Max.   :100.00   Max.   :3.0000  
+> ncol(snowdf)
+[1] 4
+> nrow(snowdf)
+[1] 31
+> attribtes(snowdf)
+Error in attribtes(snowdf) : could not find function "attribtes"
+> attribute(snowdf)
+Error in attribute(snowdf) : could not find function "attribute"
+> attributes(snowdf)
+$names
+[1] "Date"  "Sales" "Temp"  "Rain" 
+
+$class
+[1] "data.frame"
+
+$row.names
+ [1]  1  2  3  4  5  6  7  8  9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27
+[28] 28 29 30 31
+
+> snowdf[13,]
+     Date Sales Temp Rain
+13 13-Jul  3817   88    0
+> snowdf[5:10,1:2]
+     Date Sales
+5   5-Jul  2011
+6   6-Jul  4817
+7   7-Jul  4961
+8   8-Jul  4612
+9   9-Jul  4917
+10 10-Jul  5106
+> showdf$Temp
+Error: object 'showdf' not found
+> snowdf$Temp
+ [1]  68  93  95  95  78  94  95  94  96  99 100  96  88  86  89  86  85  84  86  90
+[21]  92  91  94  93  95  92  91  94  96  89  90
+> snowdf[7:18,"Date", "Rain"]
+Error in drop && length(x) == 1L : invalid 'x' type in 'x && y'
+> snowdf[7:18,c("Date","Rain")]
+     Date Rain
+7   7-Jul    0
+8   8-Jul    0
+9   9-Jul    0
+10 10-Jul    0
+11 11-Jul    0
+12 12-Jul    0
+13 13-Jul    0
+14 14-Jul    0
+15 15-Jul    0
+16 16-Jul    0
+17 17-Jul    0
+18 18-Jul    3
+> sum(snowdf$Rain)
+[1] 8
+> max(snowdf$Temp)
+[1] 100
+> mean(snowdf$Temp)
+[1] 90.77419
+> summary(snowdf$Sales)
+   Min. 1st Qu.  Median    Mean 3rd Qu.    Max. 
+   1231    4100    4416    4253    4716    5416 
+> summary(snowdf$Temp)
+   Min. 1st Qu.  Median    Mean 3rd Qu.    Max. 
+  68.00   88.50   92.00   90.77   95.00  100.00 
+> summary(snowdf($Sales))
+Error: unexpected '$' in "summary(snowdf($"
+> summary(snowdf$Sales)
+   Min. 1st Qu.  Median    Mean 3rd Qu.    Max. 
+   1231    4100    4416    4253    4716    5416 
+> summary(c(nottem$April,nottem$May,nottem$June))
+Error in nottem$April : $ operator is invalid for atomic vectors
+> bowlresults <- read.csv("Bowling.csv")
+> bowlresults
+   Lname Game1 Game2 Game3
+1  Jones   232   300   220
+2  Smith   243   213   199
+3 Miller   149   150   252
+4 Peters   220   214   200
+5 Arfuss   150   198    98
+6 Delors   101   155   203
+7  Johns   241   230   259
+> max(Game1)
+Error: object 'Game1' not found
+> max("Game1")
+[1] "Game1"
+> max(bowlresults$Game1)
+[1] 243
+> min(bowlresults$Game3)
+[1] 98
+> mean(bowlresults$Game2)
+[1] 208.5714
+> max(bowlresults$Game1, bowlresults$Game2, bowlresults$Game3)
+[1] 300
+> nrow(bowlresults)
+[1] 7
+> bowlresults[3,]
+   Lname Game1 Game2 Game3
+3 Miller   149   150   252
+> bowlresults[2:4,]
+   Lname Game1 Game2 Game3
+2  Smith   243   213   199
+3 Miller   149   150   252
+4 Peters   220   214   200
+> bowlresults[c(1,6,7),]
+   Lname Game1 Game2 Game3
+1  Jones   232   300   220
+6 Delors   101   155   203
+7  Johns   241   230   259
+> bowlresults[seq(1,7,2),]
+   Lname Game1 Game2 Game3
+1  Jones   232   300   220
+3 Miller   149   150   252
+5 Arfuss   150   198    98
+7  Johns   241   230   259
+> tail(bowlresults,2)
+   Lname Game1 Game2 Game3
+6 Delors   101   155   203
+7  Johns   241   230   259
+> colnames(bowlresults)
+[1] "Lname" "Game1" "Game2" "Game3"
+> bowlresults[,1]
+[1] Jones  Smith  Miller Peters Arfuss Delors Johns 
+Levels: Arfuss Delors Johns Jones Miller Peters Smith
+> bowlresults[,2:4]
+  Game1 Game2 Game3
+1   232   300   220
+2   243   213   199
+3   149   150   252
+4   220   214   200
+5   150   198    98
+6   101   155   203
+7   241   230   259
+> bowlresults[,c(1,3)]
+   Lname Game2
+1  Jones   300
+2  Smith   213
+3 Miller   150
+4 Peters   214
+5 Arfuss   198
+6 Delors   155
+7  Johns   230
+> bowlresults[5,c(1,3)]
+   Lname Game2
+5 Arfuss   198
+> bowlresults[seq(1,nrow(bowlresults),2),]
+   Lname Game1 Game2 Game3
+1  Jones   232   300   220
+3 Miller   149   150   252
+5 Arfuss   150   198    98
+7  Johns   241   230   259
+> str(read.csv)
+function (file, header = TRUE, sep = ",", quote = "\"", dec = ".", fill = TRUE, 
+    comment.char = "", ...)  
+> election <- read.csv("Votes for Mayor.csv", header=FALSE, stringsAsFactors = FALSE)
+> election
+           V1   V2
+1 A. Chastity 8919
+2    T. Washy 7614
+3    B. Arfus 9816
+4 U. Honestal 6479
+> names(election) <- c("Candidate", "Votes")
+> election
+    Candidate Votes
+1 A. Chastity  8919
+2    T. Washy  7614
+3    B. Arfus  9816
+4 U. Honestal  6479
+> colname(election)
+Error in colname(election) : could not find function "colname"
+> colnames(election)
+[1] "Candidate" "Votes"    
+> names(election)
+[1] "Candidate" "Votes"    
+> tot <- sum(election$Votes)
+> tot
+[1] 32828
+> election$PercentVotes <- election$Votes/tot
+> election
+    Candidate Votes PercentVotes
+1 A. Chastity  8919    0.2716888
+2    T. Washy  7614    0.2319362
+3    B. Arfus  9816    0.2990130
+4 U. Honestal  6479    0.1973620
+> age <- 17
+> answer <-  ifelse(age <16, "Cannot Drive" "YAY")
+Error: unexpected string constant in "answer <-  ifelse(age <16, "Cannot Drive" "YAY""
+> answer <- ifelse(age <16, "Cannot Drive", "YAY")
+> answer
+[1] "YAY"
+> age <- 15
+> answer
+[1] "YAY"
+> election$Ratings <- ifelse(election$PercentVotes >= .25, "Top","Bottom")
+> election
+    Candidate Votes PercentVotes Ratings
+1 A. Chastity  8919    0.2716888     Top
+2    T. Washy  7614    0.2319362  Bottom
+3    B. Arfus  9816    0.2990130     Top
+4 U. Honestal  6479    0.1973620  Bottom
+> election$Ratings <- NULL
+> election
+    Candidate Votes PercentVotes
+1 A. Chastity  8919    0.2716888
+2    T. Washy  7614    0.2319362
+3    B. Arfus  9816    0.2990130
+4 U. Honestal  6479    0.1973620
+> which(election$Votes >8000)
+[1] 1 3
+> election[which(election$Votes >8000),]
+    Candidate Votes PercentVotes
+1 A. Chastity  8919    0.2716888
+3    B. Arfus  9816    0.2990130
+> election[which(election$Candidate =="B. Arfus"),]
+  Candidate Votes PercentVotes
+3  B. Arfus  9816     0.299013
+> election[which(election$Candidate == "B. Arfus"), c("Candidate","Votes")]
+  Candidate Votes
+3  B. Arfus  9816
+> election[which(election$Candidate != "B. Arfus"), ]
+    Candidate Votes PercentVotes
+1 A. Chastity  8919    0.2716888
+2    T. Washy  7614    0.2319362
+4 U. Honestal  6479    0.1973620
+> 
+> 
+> vansales <- read.csv("VanityPress.csv")
+> vansales
+                        BookTitle AuthorFirst AuthorLast QtySold Price PubYear
+1          I'll Take The Alphabet       Sarah     Martin    3214 14.95    1994
+2                   Renegade Nuns      Albert   Simpkins   45321 19.95    2012
+3               Runaway Railroads        Mary   Crossbow   12452 14.95    2017
+4 How to Get Along with Everybody       Bobby      Buddi     112 29.19    2004
+5            Banana Patch Mystery      Albert   Simpkins    1326 15.98    2015
+6                Apple Pie Hubbub       April   Simpkins    1872 14.98    2017
+7         Howdy Dowdy Man or Myth    Penelope   Simpkins    1987 16.95    1959
+> vansales[which(vansales$Price < 15) ,1]
+[1] I'll Take The Alphabet Runaway Railroads      Apple Pie Hubbub      
+7 Levels: Apple Pie Hubbub Banana Patch Mystery ... Runaway Railroads
+> vansales[which(vansales$QtySold >10000),]
+          BookTitle AuthorFirst AuthorLast QtySold Price PubYear
+2     Renegade Nuns      Albert   Simpkins   45321 19.95    2012
+3 Runaway Railroads        Mary   Crossbow   12452 14.95    2017
+> vansales[which(vansales$PubYear==2017), ]
+          BookTitle AuthorFirst AuthorLast QtySold Price PubYear
+3 Runaway Railroads        Mary   Crossbow   12452 14.95    2017
+6  Apple Pie Hubbub       April   Simpkins    1872 14.98    2017
+> vansales[which(vansales$Price > 20), c(1,3)]
+                        BookTitle AuthorLast
+4 How to Get Along with Everybody      Buddi
+> vansales[which(vansales$PubYear<2015), c("BookTitle", "AuthorFirst", "AuthorLast")]
+                        BookTitle AuthorFirst AuthorLast
+1          I'll Take The Alphabet       Sarah     Martin
+2                   Renegade Nuns      Albert   Simpkins
+4 How to Get Along with Everybody       Bobby      Buddi
+7         Howdy Dowdy Man or Myth    Penelope   Simpkins
+> vansales$OrderFee <- ifelse(vansales$PubYear <2000, 3.00, 0)
+> vansales
+                        BookTitle AuthorFirst AuthorLast QtySold Price PubYear
+1          I'll Take The Alphabet       Sarah     Martin    3214 14.95    1994
+2                   Renegade Nuns      Albert   Simpkins   45321 19.95    2012
+3               Runaway Railroads        Mary   Crossbow   12452 14.95    2017
+4 How to Get Along with Everybody       Bobby      Buddi     112 29.19    2004
+5            Banana Patch Mystery      Albert   Simpkins    1326 15.98    2015
+6                Apple Pie Hubbub       April   Simpkins    1872 14.98    2017
+7         Howdy Dowdy Man or Myth    Penelope   Simpkins    1987 16.95    1959
+  OrderFee
+1        3
+2        0
+3        0
+4        0
+5        0
+6        0
+7        3
+> vansales$OrderFee <- NULL
+> args(read.csv)
+function (file, header = TRUE, sep = ",", quote = "\"", 
+    dec = ".", fill = TRUE, comment.char = "", ...) 
+NULL
+> bday <- read.csv(file="Birthdays.csv", header = FALSE)
+> bday
+      V1   V2         V3
+1 Arfuss  Amy 10/15/1963
+2  Smith Same 12/13/1975
+3  Jones Jane  3/15/1985
+4  Barry Mark   1/1/1980
+5  Barry Rick   1/1/1980
+> names(bday) <- c("lname", "fname", "birthday")
+> bday
+   lname fname   birthday
+1 Arfuss   Amy 10/15/1963
+2  Smith  Same 12/13/1975
+3  Jones  Jane  3/15/1985
+4  Barry  Mark   1/1/1980
+5  Barry  Rick   1/1/1980
+> colnames(bday)
+[1] "lname"    "fname"    "birthday"
+> bday$fullname <- paste(fname, lname)
+Error in paste(fname, lname) : object 'lname' not found
+> bday$fullname <- paste(bday$fname, bday$lname)
+> bday
+   lname fname   birthday   fullname
+1 Arfuss   Amy 10/15/1963 Amy Arfuss
+2  Smith  Same 12/13/1975 Same Smith
+3  Jones  Jane  3/15/1985 Jane Jones
+4  Barry  Mark   1/1/1980 Mark Barry
+5  Barry  Rick   1/1/1980 Rick Barry
+> bday$fullname
+[1] "Amy Arfuss" "Same Smith" "Jane Jones" "Mark Barry" "Rick Barry"
+> snowdf[which(snowdf$Rain >0),]
+     Date Sales Temp Rain
+1   1-Jul  1231   68    2
+5   5-Jul  2011   78    1
+18 18-Jul  3326   84    3
+19 19-Jul  3445   86    2
+> snowdf[which(snowdf$Rain>0 & snowdf$Temp<80),]
+   Date Sales Temp Rain
+1 1-Jul  1231   68    2
+5 5-Jul  2011   78    1
+> snowdf[which(snowdf$Rain>0 & snowdf$Temp<80), c(1,3,4)]
+   Date Temp Rain
+1 1-Jul   68    2
+5 5-Jul   78    1
+> snowdf[which(snowdf$Rain>0 || snowdf$Temp <75),]
+   Date Sales Temp Rain
+1 1-Jul  1231   68    2
+> bowlresults[which(bowlresults$Game1>200 & bowlresults$Game2 >200 & bowlresults$Game3>200),]
+  Lname Game1 Game2 Game3
+1 Jones   232   300   220
+7 Johns   241   230   259
+> bowlresults[which(bowlresults$Game1>250 || bowlresults$Game2>250 || bowlresults$Game3>250),]
+  Lname Game1 Game2 Game3
+1 Jones   232   300   220
+> bowlresults[which(bowlresults$Game1>250 | bowlresults$Game2>250 | bowlresults$Game3>250),]
+   Lname Game1 Game2 Game3
+1  Jones   232   300   220
+3 Miller   149   150   252
+7  Johns   241   230   259
+> subset(bowlresults,subset= Game1==300| Game2==300 | Game3==300), "Lname")
+Error: unexpected ',' in "subset(bowlresults,subset= Game1==300| Game2==300 | Game3==300),"
+> subset(bowlresults,subset= (Game1==300| Game2==300 | Game3==300), "Lname")
+  Lname
+1 Jones
+> unique(snowdf)
+     Date Sales Temp Rain
+1   1-Jul  1231   68    2
+2   2-Jul  4761   93    0
+3   3-Jul  5416   95    0
+4   4-Jul  4321   95    0
+5   5-Jul  2011   78    1
+6   6-Jul  4817   94    0
+7   7-Jul  4961   95    0
+8   8-Jul  4612   94    0
+9   9-Jul  4917   96    0
+10 10-Jul  5106   99    0
+11 11-Jul  5322  100    0
+12 12-Jul  4978   96    0
+13 13-Jul  3817   88    0
+14 14-Jul  3926   86    0
+15 15-Jul  4103   89    0
+16 16-Jul  4096   86    0
+17 17-Jul  3825   85    0
+18 18-Jul  3326   84    3
+19 19-Jul  3445   86    2
+20 20-Jul  4210   90    0
+21 21-Jul  4288   92    0
+22 22-Jul  4290   91    0
+23 23-Jul  4453   94    0
+24 24-Jul  4401   93    0
+25 25-Jul  4448   95    0
+26 26-Jul  4517   92    0
+27 27-Jul  4198   91    0
+28 28-Jul  4419   94    0
+29 29-Jul  4672   96    0
+30 30-Jul  4416   89    0
+31 31-Jul  4537   90    0
+> unique(snowdf$Rain)
+[1] 2 0 1 3
+> rainvals <- unique(snowdf$Rain)
+> length(rainvals)
+[1] 4
+> length(unique(snowdf$Temp))
+[1] 16
+> vansales$AuthorLast
+[1] Martin   Simpkins Crossbow Buddi    Simpkins Simpkins Simpkins
+Levels: Buddi Crossbow Martin Simpkins
+> unique(vansales$AuthorLast)
+[1] Martin   Simpkins Crossbow Buddi   
+Levels: Buddi Crossbow Martin Simpkins
+> order(bowlresults$Lname)
+[1] 5 6 7 1 3 4 2
+> bowlresults[order(bowlresults$Lname),]
+   Lname Game1 Game2 Game3
+5 Arfuss   150   198    98
+6 Delors   101   155   203
+7  Johns   241   230   259
+1  Jones   232   300   220
+3 Miller   149   150   252
+4 Peters   220   214   200
+2  Smith   243   213   199
+> bowlresults[order(bowlresults$Game1),]
+   Lname Game1 Game2 Game3
+6 Delors   101   155   203
+3 Miller   149   150   252
+5 Arfuss   150   198    98
+4 Peters   220   214   200
+1  Jones   232   300   220
+7  Johns   241   230   259
+2  Smith   243   213   199
+> bowlresults[order(bowlresults$Game3), c("Lname", "Game3")]
+   Lname Game3
+5 Arfuss    98
+2  Smith   199
+4 Peters   200
+6 Delors   203
+1  Jones   220
+3 Miller   252
+7  Johns   259
+> #descending
+> bowlresults[order(bowlresults$Game1, decreasing = TRUE),]
+   Lname Game1 Game2 Game3
+2  Smith   243   213   199
+7  Johns   241   230   259
+1  Jones   232   300   220
+4 Peters   220   214   200
+5 Arfuss   150   198    98
+3 Miller   149   150   252
+6 Delors   101   155   203
+> bowlresults[order(-bowlresults$Game2),]
+   Lname Game1 Game2 Game3
+1  Jones   232   300   220
+7  Johns   241   230   259
+4 Peters   220   214   200
+2  Smith   243   213   199
+5 Arfuss   150   198    98
+6 Delors   101   155   203
+3 Miller   149   150   252
+> vansales[order(vansales$AuthorLast, vansales$AuthorFirst, vansales$PubYear), ]
+                        BookTitle AuthorFirst AuthorLast QtySold Price PubYear
+4 How to Get Along with Everybody       Bobby      Buddi     112 29.19    2004
+3               Runaway Railroads        Mary   Crossbow   12452 14.95    2017
+1          I'll Take The Alphabet       Sarah     Martin    3214 14.95    1994
+2                   Renegade Nuns      Albert   Simpkins   45321 19.95    2012
+5            Banana Patch Mystery      Albert   Simpkins    1326 15.98    2015
+6                Apple Pie Hubbub       April   Simpkins    1872 14.98    2017
+7         Howdy Dowdy Man or Myth    Penelope   Simpkins    1987 16.95    1959
+> 
+> 
+> #Ex 5
+> vansales$Vsalesamt <- vansales$QtySold *vansales$Price
+> vansales
+                        BookTitle AuthorFirst AuthorLast QtySold Price PubYear
+1          I'll Take The Alphabet       Sarah     Martin    3214 14.95    1994
+2                   Renegade Nuns      Albert   Simpkins   45321 19.95    2012
+3               Runaway Railroads        Mary   Crossbow   12452 14.95    2017
+4 How to Get Along with Everybody       Bobby      Buddi     112 29.19    2004
+5            Banana Patch Mystery      Albert   Simpkins    1326 15.98    2015
+6                Apple Pie Hubbub       April   Simpkins    1872 14.98    2017
+7         Howdy Dowdy Man or Myth    Penelope   Simpkins    1987 16.95    1959
+  Vsalesamt
+1  48049.30
+2 904153.95
+3 186157.40
+4   3269.28
+5  21189.48
+6  28042.56
+7  33679.65
+> sum(vansales$Vsalesamt)
+[1] 1224542
+> subset(vansales, subset=(AuthorLast == "Simpkins"), c(1,3,5))
+                BookTitle AuthorLast Price
+2           Renegade Nuns   Simpkins 19.95
+5    Banana Patch Mystery   Simpkins 15.98
+6        Apple Pie Hubbub   Simpkins 14.98
+7 Howdy Dowdy Man or Myth   Simpkins 16.95
+> subset(vansales, subset=(AuthorLast == "Simpkins" | AuthorLast =="Martin"), c(1,3,5))
+                BookTitle AuthorLast Price
+1  I'll Take The Alphabet     Martin 14.95
+2           Renegade Nuns   Simpkins 19.95
+5    Banana Patch Mystery   Simpkins 15.98
+6        Apple Pie Hubbub   Simpkins 14.98
+7 Howdy Dowdy Man or Myth   Simpkins 16.95
+> subset(vansales, subset=(AuthorLast == "Simpkins" & Price>15), c(1,3,5))
+                BookTitle AuthorLast Price
+2           Renegade Nuns   Simpkins 19.95
+5    Banana Patch Mystery   Simpkins 15.98
+7 Howdy Dowdy Man or Myth   Simpkins 16.95
+> vansales[order(vansales$Vsalesamt), c(1,7)]
+                        BookTitle Vsalesamt
+4 How to Get Along with Everybody   3269.28
+5            Banana Patch Mystery  21189.48
+6                Apple Pie Hubbub  28042.56
+7         Howdy Dowdy Man or Myth  33679.65
+1          I'll Take The Alphabet  48049.30
+3               Runaway Railroads 186157.40
+2                   Renegade Nuns 904153.95
+> bowlresults$Average <- mean(bowlresults$Game1,bowlresults$Game2, bowlresults$Game3)
+Error in mean.default(bowlresults$Game1, bowlresults$Game2, bowlresults$Game3) : 
+  'trim' must be numeric of length one
+In addition: Warning message:
+In if (na.rm) x <- x[!is.na(x)] :
+  the condition has length > 1 and only the first element will be used
+> bowlresults$Average <- (bowlresults$Game1+bowlresults$Game3+bowlresults$Game3)/3
+> bowlresults
+   Lname Game1 Game2 Game3  Average
+1  Jones   232   300   220 224.0000
+2  Smith   243   213   199 213.6667
+3 Miller   149   150   252 217.6667
+4 Peters   220   214   200 206.6667
+5 Arfuss   150   198    98 115.3333
+6 Delors   101   155   203 169.0000
+7  Johns   241   230   259 253.0000
+> bowlresults[which(bowlresults$Average>200),]
+   Lname Game1 Game2 Game3  Average
+1  Jones   232   300   220 224.0000
+2  Smith   243   213   199 213.6667
+3 Miller   149   150   252 217.6667
+4 Peters   220   214   200 206.6667
+7  Johns   241   230   259 253.0000
+> bowlresults$TotalScore <- (bowlresults$Game1+bowlresults$Game2+bowlresults$Game3)
+> bowlresults
+   Lname Game1 Game2 Game3  Average TotalScore
+1  Jones   232   300   220 224.0000        752
+2  Smith   243   213   199 213.6667        655
+3 Miller   149   150   252 217.6667        551
+4 Peters   220   214   200 206.6667        634
+5 Arfuss   150   198    98 115.3333        446
+6 Delors   101   155   203 169.0000        459
+7  Johns   241   230   259 253.0000        730
+> bowlresults[which(bowlresults$TotalScore>750), "Lname"]
+[1] Jones
+Levels: Arfuss Delors Johns Jones Miller Peters Smith
+> names(bowlresults$Lname) <- "LastName"
+> bowlresults
+   Lname Game1 Game2 Game3  Average TotalScore
+1  Jones   232   300   220 224.0000        752
+2  Smith   243   213   199 213.6667        655
+3 Miller   149   150   252 217.6667        551
+4 Peters   220   214   200 206.6667        634
+5 Arfuss   150   198    98 115.3333        446
+6 Delors   101   155   203 169.0000        459
+7  Johns   241   230   259 253.0000        730
+> names(bowlresults)[1] <- "LastName"
+> bowlresults
+  LastName Game1 Game2 Game3  Average TotalScore
+1    Jones   232   300   220 224.0000        752
+2    Smith   243   213   199 213.6667        655
+3   Miller   149   150   252 217.6667        551
+4   Peters   220   214   200 206.6667        634
+5   Arfuss   150   198    98 115.3333        446
+6   Delors   101   155   203 169.0000        459
+7    Johns   241   230   259 253.0000        730
+> unique(bowlresults$LastName)
+[1] Jones  Smith  Miller Peters Arfuss Delors Johns 
+Levels: Arfuss Delors Johns Jones Miller Peters Smith
+> ln <- unique(vansales$AuthorLast)
+> length(ln)
+[1] 4
+> length(unique(vansales$AuthorLast))
+[1] 4
+> plot(snowdf$Rain, snowdf$Sales)
+> pairs(snowdf[,2:4])
+> hist(mtcars$mpg)
+> hist(vansales$Price)
+> hist(bowlresults$Game1)
+> hist(mtcars$mpg, breaks = 12, col="pink", xlab="Miles per GALLON", main= "Amanda's Cool Histogram")
+> df
+   warriors kills
+1    Audrey   163
+2 Bradleigh   498
+3    Emilia     2
+> plot(df, main = "Amanda's Warriors")
+> barplot(df, main= "Amanda's Warriors", col="pink")
+Error in barplot.default(df, main = "Amanda's Warriors", col = "pink") : 
+  'height' must be a vector or a matrix
+> # Simple Bar Plot 
+> counts <- table(mtcars$gear)
+> barplot(counts, main="Car Distribution", 
++         xlab="Number of Gears")
+> counts <- table(df$kills)
+> barplot(counts, main= "Amanda's Warriors", xlab="Kills", col ="pink")
+> # Simple Bar Plot 
+> counts <- table(mtcars$gear)
+> barplot(counts, main="Car Distribution", 
++         xlab="Number of Gears")
+> counts <- table(df$kills)
+> barplot(counts, main= "Amanda's Warriors", xlab="Kills", col ="pink")
+> barplot(counts, main= "Amanda's Warriors", xlab="Kills", col ="pink", names.arg=df$warriors)
+> str(barplot)
+function (height, ...)  
+> barplot(counts, main= "Amanda's Warriors", xlab="Kills", col ="rainbow", names.arg=df$warriors)
+Error in rect(y1, x1, y2, x2, ...) : invalid color name 'rainbow'
+> barplot(counts, main= "Amanda's Warriors", xlab="Kills", col ="pink.", names.arg=df$warriors)
+Error in rect(y1, x1, y2, x2, ...) : invalid color name 'pink.'
+> counts
+
+  2 163 498 
+  1   1   1 
+> counts <- df$kills
+> barplot(counts, main= "Amanda's Warriors", xlab="Kills", col ="pink", names.arg=df$warriors)
